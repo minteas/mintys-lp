@@ -282,6 +282,57 @@ p {
   }
 }
 
+/* ---------- Results (Before / After) ---------- */
+.results .section-head {
+  margin-bottom: 24px;
+}
+
+.results-scroller {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x proximity;
+  padding: 4px 20px 12px;
+}
+
+.results-track {
+  display: flex;
+  gap: 14px;
+  width: max-content;
+}
+
+.results-card {
+  flex: none;
+  width: 78vw;
+  max-width: 320px;
+  margin: 0;
+  scroll-snap-align: start;
+  border-radius: var(--radius-m);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-card);
+  background: var(--color-white);
+}
+
+.results-card img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.results-disclaimer {
+  margin-top: 18px;
+  font-size: 0.75rem;
+  color: var(--color-text-light);
+  text-align: center;
+}
+
+@media (min-width: 700px) {
+  .results-card {
+    width: 300px;
+  }
+}
+
 /* ---------- Worries list ---------- */
 .worries {
   display: grid;
