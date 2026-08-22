@@ -64,6 +64,7 @@ python3 -m http.server 8935 --directory /Users/ijiri/mintys-lp
 | top-points7.jpg | 特徴セクション（メソッド） | 同 top-points7.jpg |
 | top-points9.jpg | 特徴セクション（酸素ボックス） | 同 top-points9.jpg |
 | favicon.svg | favicon仮置き | 新規作成（「M」ロゴのプレースホルダー） |
+| result1〜6.jpg | ビフォーアフター実績ギャラリー（FV直後のセカンドビュー） | ユーザーより直接提供された実際のお客様写真（Instagram投稿素材） |
 
 ※ 元画像は `images/raw/` に保存。全画像はダウンロード許可を得た上で取得・Web用に圧縮（11MB→2.2MB）済み。
 
