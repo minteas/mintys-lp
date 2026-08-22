@@ -44,6 +44,33 @@ body {
   font-size: 16px;
   overflow-x: hidden;
   padding-bottom: 68px; /* space for mobile sticky CTA */
+  /* 日本語の禁則・単語の途中で改行されるのを防ぐ（「ミンティーズ」「自分」等が
+     行の途中で分断されないようにしつつ、はみ出す場合のみ強制改行で折り返す） */
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  line-break: strict;
+}
+
+h1,
+h2,
+h3,
+.section-title,
+.hero__title {
+  text-wrap: balance;
+}
+
+p,
+li,
+.hero__subtitle,
+.section-lead,
+.reason-highlight,
+.voice-card__quote,
+.trainer-card__desc,
+.faq-item__a,
+.results-disclaimer,
+.voices-disclaimer,
+.courses-note {
+  text-wrap: pretty;
 }
 
 img {
@@ -1082,6 +1109,17 @@ p {
 /* ---------- Utilities ---------- */
 .text-center {
   text-align: center;
+}
+
+/* スマホでのみ改行したい箇所に使う（PCでは自然に流す） */
+.u-sp {
+  display: inline;
+}
+
+@media (min-width: 700px) {
+  .u-sp {
+    display: none;
+  }
 }
 
 @media (min-width: 700px) {
