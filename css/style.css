@@ -282,6 +282,40 @@ p {
   }
 }
 
+/* ---------- Scroll cue (false bottom 対策) ---------- */
+.scroll-cue {
+  display: flex;
+  justify-content: center;
+  padding: 4px 0 14px;
+}
+
+.scroll-cue__arrow {
+  width: 14px;
+  height: 14px;
+  border-right: 2px solid var(--color-accent);
+  border-bottom: 2px solid var(--color-accent);
+  transform: rotate(45deg);
+  opacity: 0.6;
+  animation: scroll-cue-bounce 1.6s ease-in-out infinite;
+}
+
+@keyframes scroll-cue-bounce {
+  0%, 100% {
+    transform: rotate(45deg) translate(0, 0);
+    opacity: 0.4;
+  }
+  50% {
+    transform: rotate(45deg) translate(4px, 4px);
+    opacity: 0.9;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-cue__arrow {
+    animation: none;
+  }
+}
+
 /* ---------- Results (Before / After) ---------- */
 .results .section-head {
   margin-bottom: 24px;
@@ -777,6 +811,12 @@ p {
   font-size: 0.82rem;
   color: var(--color-text-light);
   line-height: 1.8;
+}
+
+/* ---------- Inline CTA（証言・FAQ直後など、根拠提示の直後に置くCTA） ---------- */
+.inline-cta {
+  margin-top: 32px;
+  text-align: center;
 }
 
 /* ---------- FAQ ---------- */
