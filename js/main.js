@@ -12,7 +12,7 @@
   var CONFIG = {
     TEL: "0566-77-7772",
     LINE_URL: "https://line.me/ti/p/@luy1644d",
-    FORM_URL: "https://gym.mintea.jp/contact/", // TODO: 新規LP専用の予約フォームがあれば差し替え
+    FORM_URL: "https://lin.ee/RUv8use", // 無料体験予約の窓口（LINE）
   };
 
   function applyConfig() {
