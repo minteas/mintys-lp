@@ -73,6 +73,11 @@ li,
   text-wrap: pretty;
 }
 
+strong {
+  font-weight: 700;
+  color: var(--color-text);
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -119,12 +124,22 @@ p {
 }
 
 .eyebrow {
-  display: inline-block;
-  font-size: 0.8rem;
-  letter-spacing: 0.15em;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
   color: var(--color-accent);
   font-weight: 700;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
+}
+
+.eyebrow::before,
+.eyebrow::after {
+  content: "";
+  width: 22px;
+  height: 1px;
+  background: var(--color-accent-pale);
 }
 
 .section-title {
@@ -486,15 +501,16 @@ p {
 }
 
 .reason-highlight {
-  margin-top: 28px;
-  background: var(--color-bg-soft2);
+  margin-top: 32px;
+  background: var(--color-accent-dark);
   border-radius: var(--radius-m);
-  padding: 24px;
+  padding: 32px 24px;
   text-align: center;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   font-weight: 700;
-  line-height: 1.9;
-  color: var(--color-accent-dark);
+  line-height: 2;
+  color: #ffffff;
+  letter-spacing: 0.02em;
 }
 
 /* ---------- Flow steps ---------- */
