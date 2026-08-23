@@ -500,6 +500,14 @@ p {
   }
 }
 
+/* 「頑張っているのに変わらないのは／努力が足りないからではありません」の
+   2行を、狭い画面でもそれぞれ1行に収めるための調整 */
+@media (max-width: 480px) {
+  #reason-title {
+    font-size: 1.3rem;
+  }
+}
+
 .reason-highlight {
   margin-top: 32px;
   background: var(--color-accent-dark);
