@@ -113,10 +113,58 @@
     });
   }
 
+  /* ----------------------------------------------------------------------
+   * ヘッダー: ヒーロー上では透明、スクロールしたら白背景に切り替え
+   * -------------------------------------------------------------------- */
+  function bindHeaderScroll() {
+    var header = document.getElementById("site-header");
+    if (!header) return;
+    function onScroll() {
+      if (window.scrollY > 60) header.classList.add("is-scrolled");
+      else header.classList.remove("is-scrolled");
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  }
+
+  /* ----------------------------------------------------------------------
+   * 要素が画面に入ったらふわっと表示する reveal 演出
+   * -------------------------------------------------------------------- */
+  function bindReveal() {
+    var targets = document.querySelectorAll(".reveal");
+    if (!targets.length) return;
+    if (!("IntersectionObserver" in window)) {
+      targets.forEach(function (el) { el.classList.add("is-visible"); });
+      return;
+    }
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.01, rootMargin: "0px 0px -2% 0px" }
+    );
+    targets.forEach(function (el) { observer.observe(el); });
+
+    // フェイルセーフ: 何らかの理由でIntersectionObserverが発火しない場合でも
+    // コンテンツが永久に非表示のままにならないよう、一定時間後に強制表示する
+    setTimeout(function () {
+      document.querySelectorAll(".reveal:not(.is-visible)").forEach(function (el) {
+        el.classList.add("is-visible");
+      });
+    }, 2500);
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     applyConfig();
     bindCtaTracking();
     bindScrollDepth();
     bindFaqAccordion();
+    bindHeaderScroll();
+    bindReveal();
   });
 })();
