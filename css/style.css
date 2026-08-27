@@ -208,20 +208,33 @@ strong { font-weight: 700; }
 .flow-row__body p:first-child { font-weight: 700; margin-bottom: 6px; font-size: 15px; }
 .flow-row__body p:last-child { font-size: 13.5px; color: var(--text-sub); line-height: 1.9; }
 
-/* ---------- Features (alternating photo / text) ---------- */
-.features { display: grid; gap: 60px; max-width: var(--max-width); margin: 0 auto; }
-.feature-row { display: grid; gap: 22px; }
-@media (min-width: 860px) {
-  .feature-row { grid-template-columns: 1.1fr 0.9fr; align-items: center; gap: 60px; }
-  .feature-row--reverse .feature-row__media { order: 2; }
-  .feature-row--reverse .feature-row__body { order: 1; }
+/* ---------- Features（写真の上に説明文を重ねるオーバーレイ型） ---------- */
+.features { display: grid; gap: 24px; max-width: var(--max-width); margin: 0 auto; }
+@media (min-width: 760px) { .features { grid-template-columns: 1fr 1fr; gap: 28px; } }
+
+.feature-row {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  display: flex;
+  align-items: flex-end;
 }
-.feature-row__media { overflow: hidden; }
-.feature-row__media img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4/3; filter: saturate(0.92) brightness(1.02); transition: transform 700ms var(--ease); }
-.feature-row:hover .feature-row__media img { transform: scale(1.02); }
-.feature-row__num { font-family: var(--font-serif); font-size: 13px; color: var(--muted); letter-spacing: 0.1em; }
-.feature-row__title { margin-top: 10px; font-size: 1.05rem; font-weight: 700; line-height: 1.7; }
-.feature-row__desc { margin-top: 14px; font-size: 13.5px; color: var(--text-sub); line-height: 2; }
+.feature-row__media { position: absolute; inset: 0; z-index: 0; }
+.feature-row__media img {
+  width: 100%; height: 100%; object-fit: cover;
+  filter: saturate(0.9) brightness(0.96);
+  transition: transform 900ms var(--ease);
+}
+.feature-row:hover .feature-row__media img { transform: scale(1.04); }
+.feature-row::after {
+  content: "";
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(180deg, rgba(18,18,18,0) 38%, rgba(18,18,18,.78) 100%);
+}
+.feature-row__body { position: relative; z-index: 2; padding: 26px 24px; color: #fff; }
+.feature-row__num { font-family: var(--font-serif); font-size: 13px; color: rgba(255,255,255,.65); letter-spacing: 0.1em; }
+.feature-row__title { margin-top: 8px; font-size: 1.05rem; font-weight: 700; line-height: 1.6; color: #fff; }
+.feature-row__desc { margin-top: 10px; font-size: 12.5px; color: rgba(255,255,255,.82); line-height: 1.85; }
 
 /* ---------- Program / Courses (luxury menu) ---------- */
 .courses { display: grid; gap: 26px; max-width: var(--max-width); margin: 0 auto; }
