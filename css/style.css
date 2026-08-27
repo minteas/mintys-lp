@@ -146,14 +146,37 @@ strong { font-weight: 700; }
     linear-gradient(180deg, rgba(8,8,7,.7) 0%, rgba(8,8,7,.58) 45%, rgba(8,8,7,.7) 80%, rgba(18,18,18,.95) 100%);
 }
 .hero__inner { position: relative; z-index: 2; max-width: 640px; margin: 0 auto; padding: 0 24px; width: 100%; transform: translateY(-30px); }
+
+/* ヒーローコピーの上品な登場アニメーション（フェード＋わずかな上昇） */
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero__kicker,
+.hero__title,
+.hero__subtitle,
+.hero__cta {
+  animation: heroFadeUp 1.4s var(--ease) both;
+}
+.hero__kicker { animation-delay: 0.15s; }
+.hero__title { animation-delay: 0.45s; }
+.hero__subtitle { animation-delay: 1s; }
+.hero__cta { animation-delay: 1.5s; }
+@media (prefers-reduced-motion: reduce) {
+  .hero__kicker, .hero__title, .hero__subtitle, .hero__cta { animation: none; }
+}
+
 .hero__kicker {
   letter-spacing: 0.32em; font-size: 11px; color: rgba(255,255,255,.75);
   text-align: center; text-transform: uppercase; margin-bottom: 14px;
   text-shadow: 0 0 20px rgba(255,244,220,.4);
 }
-.hero__title { font-size: 28px; text-align: center; color: var(--white); margin-bottom: 16px; font-weight: 400; line-height: 1.5; text-shadow: 0 0 30px rgba(255,244,220,.4); }
+.hero__title { font-size: 26px; letter-spacing: 0; text-align: center; color: var(--white); margin-bottom: 16px; font-weight: 400; line-height: 1.5; text-shadow: 0 0 30px rgba(255,244,220,.4); }
+@media (max-width: 340px) {
+  .hero__title { font-size: 22px; }
+}
 @media (min-width: 600px) {
-  .hero__title { font-size: clamp(34px, 6vw, 60px); }
+  .hero__title { font-size: clamp(34px, 5vw, 50px); }
 }
 .hero__subtitle { font-size: 14.5px; line-height: 1.9; color: rgba(255,255,255,.78); max-width: 480px; text-align: center; margin: 0 auto 8px; }
 .hero__cta { margin-top: 28px; display: flex; flex-direction: column; align-items: center; }
