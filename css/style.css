@@ -85,6 +85,9 @@ strong { font-weight: 700; }
 
 .section-title { font-size: clamp(24px, 4vw, 36px); margin-bottom: 8px; color: var(--ink); }
 .section--ink .section-title { color: var(--white); }
+@media (max-width: 400px) {
+  #reason-title { font-size: 18px; }
+}
 
 .section-lead { color: var(--text-sub); font-size: 14.5px; max-width: 600px; margin: 14px auto 0; line-height: 2; }
 .section--ink .section-lead { color: #c9c6bb; }
