@@ -152,18 +152,12 @@ strong { font-weight: 700; }
   from { opacity: 0; transform: translateY(22px); }
   to { opacity: 1; transform: translateY(0); }
 }
-.hero__kicker,
-.hero__title,
-.hero__subtitle,
-.hero__cta {
+.hero__title {
   animation: heroFadeUp 1.4s var(--ease) both;
+  animation-delay: 0.2s;
 }
-.hero__kicker { animation-delay: 0.15s; }
-.hero__title { animation-delay: 0.45s; }
-.hero__subtitle { animation-delay: 1s; }
-.hero__cta { animation-delay: 1.5s; }
 @media (prefers-reduced-motion: reduce) {
-  .hero__kicker, .hero__title, .hero__subtitle, .hero__cta { animation: none; }
+  .hero__title { animation: none; }
 }
 
 .hero__kicker {
