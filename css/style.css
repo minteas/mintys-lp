@@ -187,8 +187,8 @@ strong { font-weight: 700; }
 
 /* ---------- Results (Before / After, editorial) ---------- */
 .results-scroller { overflow-x: auto; -webkit-overflow-scrolling: touch; scroll-snap-type: x proximity; padding: 4px 24px 8px; }
-.results-track { display: flex; gap: 30px; width: max-content; }
-@media (min-width: 900px) { .results-track { display: grid; grid-template-columns: repeat(3, 1fr); width: auto; max-width: var(--max-width); margin: 0 auto; gap: 44px 34px; } }
+.results-track { display: flex; gap: 16px; width: max-content; }
+@media (min-width: 900px) { .results-track { display: grid; grid-template-columns: repeat(3, 1fr); width: auto; max-width: var(--max-width); margin: 0 auto; gap: 32px 18px; } }
 .case-card { flex: none; width: 64vw; max-width: 270px; scroll-snap-align: start; }
 @media (min-width: 900px) { .case-card { width: auto; max-width: none; } }
 .case-card__frame { overflow: hidden; aspect-ratio: 1/1; background: var(--paper-deep); }
