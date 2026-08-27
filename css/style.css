@@ -187,6 +187,10 @@ strong { font-weight: 700; }
 .worry-row { display: flex; align-items: baseline; gap: 22px; padding: 24px 0; border-bottom: 1px solid var(--line); font-size: 15.5px; line-height: 1.9; }
 .worry-row:first-child { border-top: 1px solid var(--line); }
 .worry-row__num { flex: none; font-family: var(--font-serif); font-size: 15px; color: var(--muted); width: 30px; }
+@media (max-width: 400px) {
+  .worry-row { font-size: 12.5px; gap: 12px; }
+  .worry-row__num { width: 20px; }
+}
 .worries-note { margin-top: 36px; text-align: center; font-size: 13.5px; color: var(--text-sub); }
 
 /* ---------- Why / Concept (ink, full-bleed) ---------- */
